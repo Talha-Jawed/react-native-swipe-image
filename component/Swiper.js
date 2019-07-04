@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, ScrollView, Dimensions, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Image, ScrollView, Dimensions, Text } from 'react-native';
 
 export default class Swiper extends React.Component {
     constructor(props) {
