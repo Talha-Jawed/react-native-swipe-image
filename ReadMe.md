@@ -2,18 +2,20 @@
 
 A React Native library to swipe image on top, bottom, left, right like your favorite platforms!
 
-#Install
+## Installation
 
-
-> npm install react-native-swipe-image
-
+```bash
+npm install react-native-swipe-image
+```
 OR
 
-> yarn add react-native-swipe-image
+```bash
+yarn add react-native-swipe-image
+```
 
 ![alt text](https://media.giphy.com/media/KfHsQL8zdS4dKkKUiq/giphy.gif)
 
-##Props
+## Props
 
 
 | Props | Type | Default |
@@ -28,9 +30,9 @@ OR
 | textColor | String | - |
 
 
-##Usaga
+## Usaga
 
-```
+```javaScript
 import React from 'react';
 import { View } from 'react-native';
 import Swiper from 'react-native-swipe-image';
@@ -59,14 +61,17 @@ export default class App extends React.Component {
           images={this.state.images}
           swipeBottom={(e) => this.bottom(e)}
           swipeTop={(e) => this.top(e)}
-          imageHeight={600}
-          textSize={40}
-          textBold={true}
-          textColor={'white'}
-          textUnderline={true}
+          imageHeight={number}
+          textSize={number}
+          textBold={boolean}
+          textColor={String}
+          textUnderline={boolean}
         />
       </View>
     );
   }
 }
 ```
+## License
+MIT © [Talha](https://github.com/Talha-Jawed) |
+[License](https://choosealicense.com/licenses/mit/) 
