@@ -1,11 +1,12 @@
 {
   "name": "react-native-swipe-image",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A react native image swipe component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "git repository": "https://github.com/Talha-Jawed/react-native-swipe-image",
   "keywords": [
     "react-native-swipe-image",
     "react-native-swiper",

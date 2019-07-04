@@ -13,7 +13,8 @@ OR
 yarn add react-native-swipe-image
 ```
 
-![Screenshot](https://media.giphy.com/media/KfHsQL8zdS4dKkKUiq/giphy.gif)
+
+<img src="https://media.giphy.com/media/KfHsQL8zdS4dKkKUiq/giphy.gif" width="280" height="560" />
 
 ## Props
 
