@@ -31,7 +31,7 @@ yarn add react-native-swipe-image
 | textColor | String | - |
 
 
-## Usaga
+## Usage
 
 ```javaScript
 import React from 'react';
