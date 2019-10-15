@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipe-image",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A react native image swipe component",
   "main": "index.js",
   "scripts": {
