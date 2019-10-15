@@ -1,53 +1,51 @@
 import React from 'react';
-import { StyleSheet, View, Image, ScrollView, Dimensions, Text } from 'react-native';
+import { StyleSheet, View, Image, ScrollView, Dimensions, Text, StatusBar, Platform } from 'react-native';
+const screenWidth = Math.round(Dimensions.get('window').width);
+const screenHeight = Math.round(Dimensions.get('window').height);
 
-export default class Swiper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
-
-    handleClick(e, item) {
-        const { swipeBottom, swipeTop } = this.props
+function Swiper(props) {
+    const handleClick = (e, item) => {
+        const { swipeBottom, swipeTop } = props
         if (e.nativeEvent.contentOffset.y < 0) {
             swipeBottom(item)
         } else {
             swipeTop(item)
         }
     }
-
-    render() {
-        const { images, textSize, textColor, textBold, textUnderline , imageHeight } = this.props
-        const screen = Dimensions.get('screen');
-        return (
-            <ScrollView horizontal={true} pagingEnabled={true} >
-                {images &&
-                    images.map((item, index) => {
-                        return (
-                            <ScrollView key={index} onScrollEndDrag={(e) => this.handleClick(e, item)}>
-                                <Image
-                                    style={[imageHeight ? { height: imageHeight } : { height: 400 }, { width: screen.width }]}
-                                    source={{ uri: item.url }}
-                                />
-                                <View style={styles.imageText}>
-                                    <Text style={[
-                                        textSize ? { fontSize: textSize } : { fontSize: 20 },
-                                        textBold && { fontWeight: 'bold' },
-                                        textColor && { color: textColor },
-                                        textUnderline && { textDecorationLine: 'underline' }
-                                    ]}>
-                                        {item.name && item.name}
-                                    </Text>
-                                </View>
-                            </ScrollView>
-                        )
-                    })
-                }
-            </ScrollView>
-        );
-    }
+    const { images, textSize, textColor, textBold, textUnderline, imageHeight } = props
+    const height = imageHeight && imageHeight > (screenHeight - Platform.OS === 'ios' ? 0
+        : StatusBar.currentHeight) ? (screenHeight - Platform.OS === 'ios' ? 0 : StatusBar.currentHeight) : 400;
+    return (
+        <ScrollView horizontal={true} pagingEnabled={true} >
+            {images &&
+                images.map((item, index) => {
+                    return (typeof item.url === 'string' && typeof item.name === 'string' ?
+                        <ScrollView key={index} onScrollEndDrag={(e) => handleClick(e, item)}>
+                            <Image
+                                style={{ height: height, width: screenWidth }}
+                                source={{ uri: item.url }}
+                            />
+                            <View style={styles.imageText}>
+                                <Text style={[
+                                    typeof textSize === 'number' && textSize > 0 && textSize <= 30 ? { fontSize: textSize } : { fontSize: 20 },
+                                    typeof textBold === 'boolean' && textBold && { fontWeight: 'bold' },
+                                    typeof textColor === 'string' && { color: textColor },
+                                    typeof textUnderline === 'boolean' && textUnderline && { textDecorationLine: 'underline' }
+                                ]}>
+                                    {item.name && item.name}
+                                </Text>
+                            </View>
+                        </ScrollView>
+                        :
+                        null
+                    )
+                })
+            }
+        </ScrollView>
+    );
 }
+
+export default Swiper;
 
 const styles = StyleSheet.create({
     imageText: {
