@@ -14,7 +14,7 @@ function Swiper(props) {
     }
     const { images, textSize, textColor, textBold, textUnderline, imageHeight } = props
     const height = imageHeight && imageHeight > (screenHeight - Platform.OS === 'ios' ? 0
-        : StatusBar.currentHeight) ? (screenHeight - Platform.OS === 'ios' ? 0 : StatusBar.currentHeight) : 400;
+        : StatusBar.currentHeight) ? (screenHeight - Platform.OS === 'ios' ? 0 : StatusBar.currentHeight) : imageHeight;
     return (
         <ScrollView horizontal={true} pagingEnabled={true} >
             {images &&
@@ -27,7 +27,7 @@ function Swiper(props) {
                             />
                             <View style={styles.imageText}>
                                 <Text style={[
-                                    typeof textSize === 'number' && textSize > 0 && textSize <= 30 ? { fontSize: textSize } : { fontSize: 20 },
+                                    typeof textSize === 'number' && textSize > 0 && textSize <= 40 ? { fontSize: textSize } : { fontSize: 30 },
                                     typeof textBold === 'boolean' && textBold && { fontWeight: 'bold' },
                                     typeof textColor === 'string' && { color: textColor },
                                     typeof textUnderline === 'boolean' && textUnderline && { textDecorationLine: 'underline' }
