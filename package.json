@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipe-image",
-  "version": "0.0.8",
+  "version": "1.0.9",
   "description": "A react native image swipe component",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,11 @@
     "react-native-swipe-image",
     "react-native-swiper",
     "image-swiper",
-    "swipe-image"
+    "swipe-image",
+    "yarn add react-native-swipe-image",
+    "npm install react-native-swipe-image"
   ],
   "author": "Talha Javed <jawedtalha0@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/Talha-Jawed/react-native-swipe-image"
 }
