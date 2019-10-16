@@ -24,8 +24,8 @@ yarn add react-native-swipe-image
 | image | Array of object | required |
 | swipeBottom | function() | required |
 | swipeTop | function() | required |
-| imageHeight | Number | 400 |
-| textSize | Number | 20 |
+| imageHeight | Number | required |
+| textSize | Number | max 40 |
 | textBold | boolean | false |
 | textUnderline | boolean | false |
 | textColor | String | - |
